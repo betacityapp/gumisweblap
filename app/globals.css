@@ -1,0 +1,452 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 214 32% 91%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 0 72% 51%;
+    --radius: 0.5rem;
+    --chart-1: 0 72% 51%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 3px;
+}
+
+/* ============================================================
+   PROSE CONTENT — Premium AI-generated HTML styling
+   Makes raw HTML from AI look like a designed page, not a wall
+   of text. Supports: h1-h4, p, ul, ol, li, strong, em, a, table,
+   blockquote, hr, and custom callout/feature/faq classes.
+   ============================================================ */
+
+.prose-content {
+  @apply text-slate-700 leading-relaxed;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+/* Headings — bold, with accent decorations */
+.prose-content h1 {
+  @apply text-3xl md:text-4xl font-black text-slate-900 mt-2 mb-6 leading-tight;
+  letter-spacing: -0.02em;
+}
+.prose-content h2 {
+  @apply text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-5 leading-tight;
+  position: relative;
+  padding-left: 1rem;
+  letter-spacing: -0.01em;
+}
+.prose-content h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ef4444, #dc2626);
+}
+.prose-content h3 {
+  @apply text-xl md:text-2xl font-bold text-slate-800 mt-8 mb-4 leading-snug;
+  letter-spacing: -0.01em;
+}
+.prose-content h4 {
+  @apply text-lg font-semibold text-slate-700 mt-6 mb-3;
+}
+
+/* Paragraphs */
+.prose-content p {
+  @apply text-slate-600 leading-relaxed mb-5;
+}
+
+/* Lists — styled with custom markers */
+.prose-content ul {
+  @apply space-y-3 mb-6 pl-1;
+  list-style: none;
+}
+.prose-content ul li {
+  @apply leading-relaxed text-slate-600 pl-7 relative;
+}
+.prose-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0.625rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dc2626;
+  flex-shrink: 0;
+}
+.prose-content ol {
+  @apply space-y-3 mb-6 pl-1;
+  list-style: none;
+  counter-reset: ol-counter;
+}
+.prose-content ol li {
+  @apply leading-relaxed text-slate-600 pl-10 relative;
+  counter-increment: ol-counter;
+}
+.prose-content ol li::before {
+  content: counter(ol-counter);
+  position: absolute;
+  left: 0;
+  top: 0.125rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Nested lists */
+.prose-content ul ul,
+.prose-content ol ol,
+.prose-content ul ol,
+.prose-content ol ul {
+  @apply mt-2 mb-0;
+}
+
+/* Strong / Em */
+.prose-content strong {
+  @apply font-bold text-slate-900;
+}
+.prose-content em {
+  @apply italic text-slate-600;
+}
+
+/* Links — red with hover underline */
+.prose-content a {
+  @apply text-red-600 font-semibold transition-colors;
+  text-decoration: underline;
+  text-decoration-color: rgba(220, 38, 38, 0.3);
+  text-underline-offset: 3px;
+}
+.prose-content a:hover {
+  text-decoration-color: #dc2626;
+}
+
+/* Tables — premium styled */
+.prose-content table {
+  @apply w-full mb-6 border-collapse overflow-hidden;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.prose-content thead {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+.prose-content thead th {
+  @apply text-white font-semibold text-sm px-5 py-4 text-left;
+  border: none;
+}
+.prose-content thead th:first-child {
+  border-top-left-radius: 12px;
+}
+.prose-content thead th:last-child {
+  border-top-right-radius: 12px;
+}
+.prose-content tbody tr {
+  @apply border-t border-slate-100 transition-colors;
+}
+.prose-content tbody tr:nth-child(even) {
+  @apply bg-slate-50;
+}
+.prose-content tbody tr:hover {
+  @apply bg-red-50;
+}
+.prose-content tbody td {
+  @apply px-5 py-3.5 text-sm text-slate-600 border-none;
+}
+.prose-content tbody td strong {
+  @apply text-red-600;
+}
+
+/* Blockquotes — elegant left-border callout */
+.prose-content blockquote {
+  @apply relative bg-gradient-to-br from-slate-50 to-white border-l-4 border-red-500 rounded-r-2xl p-6 md:p-8 my-8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.prose-content blockquote p {
+  @apply text-lg text-slate-700 italic font-medium mb-0;
+}
+.prose-content blockquote p::before {
+  content: '"';
+  @apply text-4xl text-red-300 font-serif leading-none mr-1;
+  vertical-align: -0.5rem;
+}
+
+/* Horizontal rule — gradient divider */
+.prose-content hr {
+  border: none;
+  height: 2px;
+  margin: 3rem 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #dc2626, transparent);
+}
+
+/* Images inside content */
+.prose-content img {
+  @apply rounded-2xl shadow-lg w-full my-6;
+}
+
+/* ============================================================
+   AI CONTENT BLOCKS — Special classes the AI can use
+   The AI prompt instructs it to use these CSS classes for
+   callout boxes, feature grids, FAQ accordions, etc.
+   ============================================================ */
+
+/* Callout / Info box */
+.prose-content .callout {
+  @apply bg-blue-50 border border-blue-200 rounded-2xl p-5 md:p-6 my-6;
+}
+.prose-content .callout p {
+  @apply text-blue-900 mb-0;
+}
+.prose-content .callout strong {
+  @apply text-blue-900;
+}
+
+/* Warning box */
+.prose-content .warning-box {
+  @apply bg-amber-50 border border-amber-200 rounded-2xl p-5 md:p-6 my-6;
+}
+.prose-content .warning-box p {
+  @apply text-amber-900 mb-0;
+}
+
+/* Success box */
+.prose-content .success-box {
+  @apply bg-green-50 border border-green-200 rounded-2xl p-5 md:p-6 my-6;
+}
+.prose-content .success-box p {
+  @apply text-green-900 mb-0;
+}
+
+/* Danger / alert box */
+.prose-content .danger-box {
+  @apply bg-red-50 border border-red-200 rounded-2xl p-5 md:p-6 my-6;
+}
+.prose-content .danger-box p {
+  @apply text-red-900 mb-0;
+}
+
+/* Feature grid — 2 or 3 column cards */
+.prose-content .feature-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 my-6;
+}
+.prose-content .feature-grid.three-col {
+  @apply md:grid-cols-3;
+}
+.prose-content .feature-card {
+  @apply bg-white border border-slate-200 rounded-2xl p-5 transition-all;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.prose-content .feature-card:hover {
+  @apply border-red-200 shadow-md -translate-y-0.5;
+}
+.prose-content .feature-card h3,
+.prose-content .feature-card h4 {
+  @apply mt-0 mb-2 text-red-600;
+}
+.prose-content .feature-card p {
+  @apply text-sm text-slate-500 mb-0;
+}
+
+/* Price card */
+.prose-content .price-card {
+  @apply bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-6 my-6 text-center;
+}
+.prose-content .price-card .price {
+  @apply text-4xl font-black text-white my-2;
+}
+.prose-content .price-card .price span {
+  @apply text-lg font-normal text-slate-400;
+}
+.prose-content .price-card p {
+  @apply text-slate-300 text-sm mb-0;
+}
+
+/* CTA box */
+.prose-content .cta-box {
+  @apply bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-6 md:p-8 my-8 text-center;
+}
+.prose-content .cta-box h2,
+.prose-content .cta-box h3 {
+  @apply text-white mt-0 mb-3;
+  padding-left: 0;
+}
+.prose-content .cta-box h2::before,
+.prose-content .cta-box h3::before {
+  display: none;
+}
+.prose-content .cta-box p {
+  @apply text-red-100 mb-0;
+}
+.prose-content .cta-box a {
+  @apply inline-block bg-white text-red-600 font-bold px-6 py-3 rounded-xl mt-4 no-underline hover:bg-red-50 transition-colors;
+}
+
+/* FAQ section */
+.prose-content .faq-section {
+  @apply my-6;
+}
+.prose-content .faq-item {
+  @apply bg-white border border-slate-200 rounded-xl mb-3 overflow-hidden;
+}
+.prose-content .faq-item h3,
+.prose-content .faq-item h4 {
+  @apply bg-slate-50 px-5 py-3.5 text-base font-semibold text-slate-800 mt-0 mb-0 cursor-pointer flex items-center justify-between;
+  padding-left: 1.25rem !important;
+}
+.prose-content .faq-item h3::before,
+.prose-content .faq-item h4::before {
+  display: none;
+}
+.prose-content .faq-item p {
+  @apply px-5 py-4 text-slate-600 mb-0;
+}
+
+/* Steps / process */
+.prose-content .steps {
+  @apply space-y-4 my-6;
+}
+.prose-content .step {
+  @apply flex gap-4 items-start;
+}
+.prose-content .step-number {
+  @apply shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 text-white font-bold flex items-center justify-center text-lg;
+}
+.prose-content .step-content {
+  @apply flex-1 pt-1;
+}
+.prose-content .step-content h3,
+.prose-content .step-content h4 {
+  @apply mt-0 mb-1;
+}
+.prose-content .step-content p {
+  @apply text-sm text-slate-500 mb-0;
+}
+
+/* Stats row */
+.prose-content .stats-row {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4 my-6;
+}
+.prose-content .stat-item {
+  @apply text-center bg-slate-50 rounded-2xl p-5;
+}
+.prose-content .stat-value {
+  @apply text-3xl md:text-4xl font-black text-red-600 mb-1;
+}
+.prose-content .stat-label {
+  @apply text-sm text-slate-500;
+}
+
+/* Partner card */
+.prose-content .partner-card {
+  @apply bg-gradient-to-r from-slate-50 to-white border border-slate-200 rounded-2xl p-5 my-6 flex flex-col md:flex-row items-center gap-4;
+}
+.prose-content .partner-card .partner-info {
+  @apply flex-1 text-center md:text-left;
+}
+.prose-content .partner-card h3,
+.prose-content .partner-card h4 {
+  @apply mt-0 mb-1 text-slate-900;
+  padding-left: 0;
+}
+.prose-content .partner-card h3::before,
+.prose-content .partner-card h4::before {
+  display: none;
+}
+.prose-content .partner-card p {
+  @apply text-sm text-slate-500 mb-2;
+}
+.prose-content .partner-card a {
+  @apply inline-flex items-center gap-1 text-red-600 font-semibold text-sm;
+}
+
+/* Image gallery */
+.prose-content .image-gallery {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-3 my-6;
+}
+.prose-content .image-gallery img {
+  @apply rounded-xl shadow-md m-0 aspect-square object-cover;
+}
+
+/* Two-column layout */
+.prose-content .two-col {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 my-6;
+}
+
+/* Highlight banner */
+.prose-content .highlight-banner {
+  @apply bg-slate-900 rounded-2xl p-6 md:p-8 my-6 text-center;
+}
+.prose-content .highlight-banner h2,
+.prose-content .highlight-banner h3 {
+  @apply text-white mt-0 mb-2;
+  padding-left: 0;
+}
+.prose-content .highlight-banner h2::before,
+.prose-content .highlight-banner h3::before {
+  display: none;
+}
+.prose-content .highlight-banner p {
+  @apply text-slate-300 mb-0;
+}
